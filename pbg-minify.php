@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: pbg-minify
+Plugin Name: Pbg Minify
 Plugin URI: http://github.com/pbogdan/pbg-minify/
 Description: Minifies your CSS & JS.
 Version: 0.0.1
@@ -30,9 +30,20 @@ License: GPL2
 require_once "vendor/minify/CSSmin.php";
 require_once "vendor/minify/JSMin.php";
 
-ini_set("include_path", ini_get("include_path") . ":" . __DIR__ . "/vendor/");
+require_once  ABSPATH . '/wp-admin/includes/plugin.php';
 
-require_once "autoload.php";
+if (is_plugin_active("pbg-spl-autoloader/pbg-spl-autoloader.php")) {
+    require_once WP_PLUGIN_DIR . "/pbg-spl-autoloader/pbg-spl-autoloader.php";
+} else {
+    throw new \RuntimeException("pbg-spl-autoloader plugin is required");
+}
+
+$cl = new SplClassLoader(
+    "Pbg\Wordpress\Plugin\Minify",
+    __DIR__ . "/vendor"
+);
+
+$cl->register();
 
 use Pbg\Wordpress\Plugin\Minify as Minify;
 
