@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Pbg Minify ===
 Tags: js, css, minify
 Requires at least: 3.1
 Tested up to: 3.4
@@ -6,8 +6,8 @@ Stable tag: 0.0.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A plugin to automatically combine and compress your CSS and Javascript
-assets, to reduce the number of requests and their size.
+A Wordpress plugin to automatically combine and compress your CSS and
+Javascript assets, to reduce the number of requests and their size.
 
 == Description ==
 
