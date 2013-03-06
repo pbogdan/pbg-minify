@@ -48,4 +48,3 @@ $cl->register();
 use Pbg\Wordpress\Plugin\Minify as Minify;
 
 Minify\Minify::initialise();
-Minify\AssetManager::activate();
