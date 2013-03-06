@@ -62,7 +62,7 @@ class AssetManager
                 add_action(
                     "wp_head",
                     function() {
-                        self::loadAssets("css");
+                        AssetManager::loadAssets("css");
                     },
                     8
                 );
@@ -70,7 +70,7 @@ class AssetManager
                 add_action(
                     "wp_footer",
                     function() {
-                        self::loadAssets("js");
+                        AssetManager::loadAssets("js");
                     },
                     20
                 );
